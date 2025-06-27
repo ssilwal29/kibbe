@@ -12,7 +12,7 @@ A full-stack application to determine your Kibbe body type using GPT-4 Vision an
 
 ### Backend
 1. `cd backend`
-2. `python3 -m venv venv && source venv/bin/activate`
+2. `python3 -m venv .venv && source .venv/bin/activate`
 3. `pip install -r requirements.txt`
 4. Create `.env` based on `.env.example`
 5. `uvicorn main:app --reload`

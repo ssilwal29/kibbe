@@ -1,0 +1,6 @@
+{
+  "questions":[
+    {"id":"shoulders","question":"Your shoulders?","options":[{"label":"Soft","value":"soft"},{"label":"Angular","value":"angular"}]},
+    {"id":"waist","question":"Your waist?","options":[{"label":"Defined","value":"defined"},{"label":"Straight","value":"straight"}]}
+  ]
+}

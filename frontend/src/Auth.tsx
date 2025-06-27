@@ -11,7 +11,7 @@ export default function Auth({ onAuth }: { onAuth:any }) {
   return (
     <div className="flex space-x-2">
       <input placeholder="email" onChange={e=>setEmail(e.target.value)}/>
-      <input type="password" placeholder="pw" onChange={e=>setPw(e.target.value)}/>
+      <input type="password" placeholder="Password" onChange={e=>setPw(e.target.value)}/>
       <button onClick={handle}>{signUp?"Sign Up":"Login"}</button>
       <button onClick={()=>setSign(!signUp)} className="underline text-sm">
         {signUp?"Have account?":"New user?"}

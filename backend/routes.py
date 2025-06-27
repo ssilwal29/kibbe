@@ -28,7 +28,14 @@ async def analyze_kibbe(file: UploadFile = File(...), quiz_answers: str = Form(.
 
     # upload image
     upload_url = f"{SUPABASE_URL}/storage/v1/object/{STORAGE_BUCKET}/{user_id}/{photo_filename}"
-    requests.post(upload_url, headers={"Authorization":f"Bearer {SUPABASE_KEY}"}, data=img)
+    requests.post(
+        upload_url,
+        headers={
+            "Authorization": f"Bearer {SUPABASE_KEY}",
+            "Content-Type": "image/jpeg",
+        },
+        data=img,
+    )
 
     # save result
     requests.post(f"{SUPABASE_URL}/rest/v1/results",

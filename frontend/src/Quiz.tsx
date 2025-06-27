@@ -15,13 +15,17 @@ export default function Quiz({ onSubmit }: { onSubmit: (ans: Record<string,strin
 
   return (
     <div>
-      <h2 className="font-semibold">{q.question}</h2>
-      <div className="flex space-x-2">
-        {q.options.map((opt: any)=>
-          <button key={opt.value} onClick={()=>next(opt.value)} className="border p-2">
+      <h2 className="font-semibold text-lg mb-2">{q.question}</h2>
+      <div className="flex space-x-2 mb-4">
+        {q.options.map((opt: any) => (
+          <button
+            key={opt.value}
+            onClick={() => next(opt.value)}
+            className="px-4 py-2 border rounded bg-blue-500 text-white hover:bg-blue-600"
+          >
             {opt.label}
           </button>
-        )}
+        ))}
       </div>
     </div>
   );

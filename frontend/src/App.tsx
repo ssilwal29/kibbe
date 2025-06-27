@@ -38,19 +38,29 @@ export default function App() {
   };
 
   return (
-    <div className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Kibbe Style Finder</h1>
+    <div className="p-8 max-w-2xl mx-auto bg-white rounded-xl shadow-md">
+      <h1 className="text-3xl font-bold mb-6">Kibbe Style Finder</h1>
       {!session ? (
         <Auth onAuth={setSession} />
       ) : (
         <>
-          <div className="mb-4">
-            <button onClick={() => setView('main')} className="mr-3 underline text-sm">Home</button>
-            <button onClick={() => setView('history')} className="underline text-sm">My History</button>
+          <div className="mb-6 space-x-4">
+            <button
+              onClick={() => setView('main')}
+              className="text-sm text-blue-600 hover:underline"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => setView('history')}
+              className="text-sm text-blue-600 hover:underline"
+            >
+              My History
+            </button>
           </div>
           {view === 'main' && !result ? (
             <>
-              <input type="file" onChange={handlePhoto} />
+              <input type="file" onChange={handlePhoto} className="mb-4 block" />
               <Quiz onSubmit={handleQuizSubmit} />
             </>
           ) : view === 'main' ? (

@@ -14,12 +14,21 @@ ${result.style}
   };
   return (
     <div>
-      <h2>Your Analysis</h2>
-      <pre>{result.analysis}</pre>
-      <h3>Style Guide</h3>
-      <pre>{result.style}</pre>
-      <button onClick={()=>navigator.clipboard.writeText(markdown)}>Copy MD</button>
-      <button onClick={share}>Share to Reddit</button>
+      <h2 className="text-lg font-semibold mb-2">Your Analysis</h2>
+      <pre className="whitespace-pre-wrap mb-4">{result.analysis}</pre>
+      <h3 className="font-semibold mb-2">Style Guide</h3>
+      <pre className="whitespace-pre-wrap mb-4">{result.style}</pre>
+      <div className="space-x-2">
+        <button
+          onClick={() => navigator.clipboard.writeText(markdown)}
+          className="px-4 py-2 bg-blue-500 text-white rounded"
+        >
+          Copy MD
+        </button>
+        <button onClick={share} className="px-4 py-2 border rounded">
+          Share to Reddit
+        </button>
+      </div>
     </div>
   );
 }

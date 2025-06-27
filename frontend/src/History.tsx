@@ -12,14 +12,24 @@ export default function History() {
   },[]);
   return (
     <div>
-      <h2>History</h2>
-      {data.map((r,i)=>(
-        <div key={i}>
-          <p>{new Date(r.created_at).toLocaleString()}</p>
-          {r.photo_url && <img src={r.photo_url.replace('/object/','/object/public/')} width={150}/>}
-          <pre>{r.gpt_result}</pre>
-        </div>
-      ))}
+      <h2 className="text-lg font-semibold mb-2">History</h2>
+      <div className="space-y-4">
+        {data.map((r, i) => (
+          <div key={i} className="p-4 border rounded">
+            <p className="text-sm text-gray-600 mb-2">
+              {new Date(r.created_at).toLocaleString()}
+            </p>
+            {r.photo_url && (
+              <img
+                src={r.photo_url.replace('/object/', '/object/public/')}
+                width={150}
+                className="mb-2"
+              />
+            )}
+            <pre className="whitespace-pre-wrap text-sm">{r.gpt_result}</pre>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

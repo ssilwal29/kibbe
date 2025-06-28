@@ -20,3 +20,7 @@ A full-stack application to determine your Kibbe body type using GPT-4 Vision an
 ## Deployment
 - Frontend: Vercel (set VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY)
 - Backend: Render (set SUPABASE_URL, SUPABASE_KEY, OPENAI_API_KEY, STORAGE_BUCKET)
+
+### Reddit Bot
+1. Set Reddit API credentials in `backend/.env` (see `backend/.env.example`).
+2. From `backend`, run `python reddit_bot.py <reddit_post_url>` to analyze an image post and automatically reply with the Kibbe type and style guide. Add `--all` to analyze every image if the post contains a gallery.
